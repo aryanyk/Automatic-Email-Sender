@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Sender</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<style>
+   .input {
+      width: 100%;
+      max-width: 220px;
+      height: 45px;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1.5px solid lightgrey;
+      outline: none;
+      transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+      box-shadow: 0px 0px 20px -18px;
+    }
+
+    .input:hover {
+      border: 2px solid lightgrey;
+      box-shadow: 0px 0px 20px -17px;
+    }
+
+    .input:active {
+      transform: scale(0.95);
+    }
+
+    .input:focus {
+      border: 2px solid grey;
+    }
+
+    /* Increase width of email_body */
+    #email_body {
+      width: 100%; /* Set width to 100% */
+      max-width: 1000px; /* Set maximum width if needed */
+      height: 150px; /* Adjust height as needed */
+      padding: 12px; /* Adjust padding as needed */
+      border-radius: 12px; /* Adjust border-radius as needed */
+      border: 1.5px solid lightgrey; /* Adjust border properties as needed */
+      outline: none;
+      transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+      box-shadow: 0px 0px 20px -18px;
+    }
+
+    /* Center text inside the button */
+    .send-button {
+      text-align: center;
+    }
+</style>
+
+<body>
+    {% include 'nav.html' %}
+
+    <div class="container">
+    </div>
+    
+    <div class="container" >
+        <h1>Email Sender</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="csv_file">Upload CSV File:</label>
+            <input type="file" name="csv_file" id="csv_file" accept=".csv"  class="input" required><br><br>
+            
+            <label for="email_body">Email Body:</label><br>
+            <textarea name="email_body" id="email_body" rows="5" cols="50" class="input" required></textarea><br><br>
+            
+            <label for="email_subject">Email Subject:</label><br>
+            <input type="text" name="email_subject" id="email_subject" class="input" required><br><br>
+            
+            <label for="sender_email">Sender Email:</label><br>
+            <input type="email" name="sender_email" id="sender_email" class="input" required><br><br>
+            
+            <label for="sender_password">Sender Password:</label><br>
+            <input type="password" name="sender_password" id="sender_password" class="input" required><br><br>
+            
+            <label for="attachment">Attach File:</label>
+            <input type="file" name="attachment" id="attachment" class="input"><br><br>
+            
+            <!-- Add class to the submit button -->
+            <input type="submit" value="Send Email" class="input send-button" required>
+        </form>
+    </div>
+    
+    {% include 'footer.html' %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

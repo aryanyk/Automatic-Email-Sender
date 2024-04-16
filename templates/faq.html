@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .faq {
+            margin-bottom: 20px;
+        }
+
+        .faq h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .faq p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .faq p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq h3::after {
+            content: '+';
+            float: right;
+            font-size: 24px;
+        }
+
+        .faq.active h3::after {
+            content: '-';
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        
+        <div class="faq">
+            <h3>Is it Free?</h3>
+            <p>Yes, it is Completely free and can be use for commercial purposes.</p>
+        </div>
+        
+        <div class="faq">
+            <h3>How many mails can it send in a day</h3>
+            <p>It can send almost 500 emails per day without getting spam </p>
+        </div>
+        
+        <div class="faq">
+            <h3>Where does it come from?</h3>
+            <p>This project is build by Aryan Khandhadiya for helping business with free tools and it open source so anyone can use and modify it without my permission.</p>
+        </div>
+
+        <div class="faq">
+            <h3>How do I get started?</h3>
+            <p>To get started, simply follow the instructions provided in our How to use process.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle FAQ answers
+        document.querySelectorAll('.faq h3').forEach(item => {
+            item.addEventListener('click', () => {
+                item.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
